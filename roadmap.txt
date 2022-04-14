@@ -1,0 +1,5 @@
+Ideas for future versions:
+1. Mechanism for odds based betting
+2. Interest
+3. Verification based on stakes
+4. 
