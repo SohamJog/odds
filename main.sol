@@ -14,7 +14,7 @@ contract MyContract
         uint amt;           //amount of bet
         uint betId;         //id of bet
     }
-    bet[] zombies;
+    bet[] bets;
 
     function _createBet() internal 
     {
