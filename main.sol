@@ -50,7 +50,7 @@ contract MyContract
     function forfeit(uint _betId) public
     {
         Bet storage bet = bets[_betId];
-        require((bet.p1==msg.sender || bet.p2==msg.sender)&& bet.betState==State.Confirmed);
+        require((bet.p1==msg.sender || bet.p2==msg.sender)&& (bet.betState==State.Confirmed || bet.betState==State.Default));
         bet.betState = State.Done;
         payable(bet.p1).transfer(bet.val);
         payable(bet.p2).transfer(bet.val);
@@ -87,3 +87,16 @@ contract MyContract
 
 
 }
+
+
+
+/*
+Handle the string case
+Don't make request bet payable, only pay once 
+Bets array bad idea?
+simultaneous payment somehow
+notification problem
+expiration to the requests
+expiration to the bets
+
+*/
