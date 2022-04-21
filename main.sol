@@ -13,13 +13,13 @@ contract MyContract
         address p1;
         address p2;
         State betState;
-        uint message;
+        bytes32 message;
         uint val;
         uint tentativewinner;
     }
     //array of all bets(active and inactive) maybe change this?
     Bet[] bets;
-    function requestBet(uint _msg, address _to) public payable
+    function requestBet(bytes32 _msg, address _to) public payable
     {
         //value = msg.value
         //person1 = msg.sender
